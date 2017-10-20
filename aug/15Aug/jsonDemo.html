@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>
+			Demo of JSON object
+		</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var sDetails = {
+				sname: 'Teena',
+				'sage': 20,
+				"sgender": 'Female',
+				isfeePaid: false,
+				marks: [20, 40, 40]
+				key: {
+					
+				}
+			};
+
+			var eDetails = {};
+			eDetailis.ename = 'Raj';
+			eDetailis.eage = 50;
+			eDetailis.egender = 'Male';
+			eDetailis.esal = 4000;
+
+			console.log(typeof(sDetails));
+
+			function displayEmpDetails() {
+				console.log('EMPLOYEE DETAILS');
+				console.log("Name - " + eDetails.ename);
+				console.log("Age - " + eDetails.eage);
+				console.log("Gender - " + eDetails.egender);
+				console.log("Sal - " + eDetails.esal);
+			}
+			function displayStdDetails() {
+				console.log('Student DETAILS');
+				console.log("Name - " + sDetails.sname);
+				console.log("Age - " + sDetails.sage);
+				console.log("Gender - " + sDetails.sgender);
+			}
+			displayStdDetails();
+			displayEmpDetails();
+		</script>
+	</body>
+</html>

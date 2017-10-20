@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>
+			Demo of Exception Handling
+		</title>
+		<style type="text/css">
+			.block {
+				border: 1px solid;
+				background: #ccc;
+				padding: 10px;
+				margin: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="block">
+			<input type="button" value="Create Msg Container" onclick="createContainer()">
+			<input type="button" value="Show Msg" onclick="showMsg()">
+		</div>
+		<div id="container">
+		</div>
+		<script type="text/javascript">
+			function createContainer() {
+				var block = document.createElement('div');
+				block.setAttribute("class", 'block');
+				block.setAttribute("id", 'msgContainer');
+				document.querySelector("#container").appendChild(block);
+			}
+
+			function showMsg() {
+				var msg = "Hello how are you doing...";
+				try {
+					document.querySelector("#msgContainer").innerHTML = '<b>' + msg + '</b>'
+				}catch(err){
+					alert("Make sure you create container and then click on show msg");
+				}
+				
+				var thxMsg = "Thx for visiting our page today.";
+				var thxElment = document.createElement("div");
+				thxElment.innerHTML = thxMsg;
+				document.querySelector("#container").appendChild(thxElment);
+			}
+		</script>
+	</body>
+</html>

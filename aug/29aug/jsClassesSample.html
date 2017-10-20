@@ -1,0 +1,34 @@
+<html>
+	<head>
+		<title>
+			SAmple js classes example
+		</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+
+			function carDetails(obj){
+				this.color = obj.clr;
+				this.noOfGears = obj.grears;
+				this.brand = obj.brand;
+				this.noOfEngins = 1;
+				this.imageUrl = obj.img;
+				this.displayDetails = function() {
+					console.log("Color " + this.color);
+					console.log("noOfGears " + this.noOfGears);
+					console.log("brand " + this.brand);
+					console.log("Eng " + this.noOfEngins);
+				}
+			}
+			var data1 = {clr: "Black", grears: 5, brand:"Benz"};
+			var c1 = new carDetails(data1);
+			c1.displayDetails();
+			console.log(c1);
+
+			var c2 = new carDetails();
+			c2.noOfSeatAllocation = 5
+			console.log(c2);
+
+		</script>
+	</body>
+</html>;

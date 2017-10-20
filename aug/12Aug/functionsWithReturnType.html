@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<title>
+			Functions with return value.
+		</title>
+	</head>
+	<body>
+		<div>
+			Functions with parameter and return.
+		</div>
+		<script type="text/javascript">
+			function readValues(){
+				var a = prompt("Enter first VAlue");
+				var b = prompt("Enter second VAlue");
+
+				a = parseInt(a);
+				b = parseInt(b);
+				var sum = addValues(a, b);
+				console.log("the sum of two numbers is " + sum);
+				var sub = subValues(a, b);
+				console.log("the Substraction of two numbers is " + sub);
+			}
+			function addValues(a, b) {
+				var c = 0;
+				c = a + b;
+				return c;
+			}
+
+			function subValues(p1, p2){
+				var c = 0;
+				c = p1 - p2;
+				return c;
+			}
+			readValues();
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title>
+			Program to find total count of individual char.
+		</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var msg = "India is great asfa sdfasf2w3rfasefasd"
+			var result = {};
+			var count;
+			for (var i = 0 ; i < msg.length; i++) {
+				count = 0;
+				var currentChar = msg[i];
+				if (currentChar == ' ') {
+					// do nothing
+				} else if (result[currentChar]) {
+					// do nothing
+				} else {
+					for (var j = i; j < msg.length; j++) {
+						if (msg[j] == currentChar) {
+							count++;
+						}
+					}
+					result[currentChar] = count;
+				}
+			}
+			console.log(result);
+		</script>
+	</body>
+</html>

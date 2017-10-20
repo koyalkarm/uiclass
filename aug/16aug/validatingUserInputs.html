@@ -1,0 +1,63 @@
+<html>
+	<head>
+		<title>
+			Demo of validating input elements using Event object.
+		</title>
+		<style type="text/css">
+			.block {
+				border: 1px solid;
+				background: #ccc;
+				margin: 10px;
+				padding: 10px;
+			}
+			li {
+				list-style: none;
+				margin: 10px;
+			}
+			.title {
+				text-align: center;
+			}
+			.msgBlock {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="block">
+			<div class="title">Validating Data</div>
+			Make sure you enter numbers only
+			<ul>
+				<li>
+					Enter first value: <input type="text" id="fval" onkeypress="return validateData(event)">
+				</li>
+				<li>
+					Enter first value: <input type="text" id="sval"  onkeypress="return validateData(event)">
+				</li>
+				<li>
+					<input type="button" value="Add Values" onclick="addValues()">
+				<li class="msgBlock">
+					The sum is <span id="result"></span>
+				</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			function addValues() {
+				var firstVal = document.querySelector("#fval").value;
+				var secondVal = document.querySelector("#sval").value;
+				firstVal = parseInt(firstVal);
+				secondVal = parseInt(secondVal);
+				var sum = firstVal + secondVal;
+				document.querySelector("#result").innerText = sum;
+
+				document.querySelector(".msgBlock").style.display = 'block';
+			}
+			function validateData(event) {
+				console.log(event);
+				if (event.charCode >= 97 && event.charCode <= 122) {
+					return false;
+				}
+				return true;
+			}
+		</script>
+	</body>
+</html>

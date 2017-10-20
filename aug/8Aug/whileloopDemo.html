@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title>
+			While loop control structure to find the sum of given number.
+		</title>
+	</head>
+	<body>
+		<div>
+			Demo of while loop to find Armstrong number.
+		</div>
+		<script type="text/javascript">
+			var n = prompt("ente the number");
+			n = parseInt(n);
+			var rem = 0;
+			var result = 0;
+			var temp = n;
+			while(n > 0) {
+				rem = n % 10;
+				result = result + rem * rem * rem;
+				n = n/10;
+				n = parseInt(n);
+			}
+			if (temp == result) {
+				console.log("armstrong no. is " + result);
+			} else {
+				console.log("its not");
+			}
+
+		</script>
+	</body>
+</html>

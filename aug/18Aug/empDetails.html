@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<title>
+			Demo of empdetails
+		</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var empDetails = {
+				name: prompt("nter user name"),
+				age: 60,
+				gender: 'M',
+				bsal: prompt("Enter user bsal")
+			};
+			function calTotalTax() {
+				empDetails.bsal = parseInt(empDetails.bsal);
+				empDetails.pf = (12 * empDetails.bsal)/ 100;
+				empDetails.hra = (12 * empDetails.bsal)/ 100;
+				empDetails.totalSal = empDetails.pf + empDetails.bsal + empDetails.hra;
+				if (empDetails.gender == 'M') {
+					empDetails.totalTax = (10 * empDetails.totalSal) / 100;
+				} else {
+					empDetails.totalTax = (8 * empDetails.totalSal) / 100;
+				}
+			}
+
+			
+			calTotalTax();
+			function displayEmpDetails() {
+				console.log("Emoployee name" + empDetails.name);
+			}
+			displayEmpDetails();
+
+		</script>
+	</body>
+</html>

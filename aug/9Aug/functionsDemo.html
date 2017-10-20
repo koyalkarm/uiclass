@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<title>
+			Demo of Javascript functions
+		</title>
+	</head>
+	<body>
+		<div>
+			Demo of javascript functions
+		</div>
+		<script type="text/javascript">
+			var empName = 'Raj';
+			var empAge = 40;
+			var gender = 'Male';
+			var bsal = 30000;
+
+			var pf = 0;
+			var totalSal = 0;
+			var hra = 0;
+			var totalTax = 0;
+			var taxPercent;
+			// Function responsible for calculating the pf
+			function getPf() {
+				pf = (bsal * 12)/100;	
+			}
+
+			// Function responsible for calculating the HRA
+			function getHra() {
+				hra = (bsal * 15)/100;	
+			}			
+			
+			// Function responsible for getting the total sal and tax percent, basing on that total sal will be calculated.
+			function getTotalSal() {
+				totalSal = bsal + pf + hra;
+				if (totalSal > 20000) {
+					taxPercent = 15;
+				} else {
+					taxPercent = 10;
+				}
+
+				totalTax = (totalSal * taxPercent) / 100;
+				totalSal = totalSal - totalTax;
+			}
+			function displayEmpDetails() {
+				console.log("Employee name " + empName);
+				console.log("Employee gender " + gender);
+				console.log("Employee Age " + empAge);
+				console.log("Employee Total Tax value" + totalTax);
+				console.log("Employee Total Sal value" + totalSal);
+			}
+			
+			getHra();
+			getPf();
+			getTotalSal();
+			displayEmpDetails();
+		</script>
+	</body>
+</html>

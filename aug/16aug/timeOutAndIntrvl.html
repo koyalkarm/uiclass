@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<title>
+			Demo of timeout and interval methods.
+		</title>
+	</head>
+	<body>
+		<div>
+			Demo of Timeout and interval methods.
+		</div>
+		<input type="button" value="Stop" onclick="stopMsg()">
+		<div id="container">
+
+		</div>
+		<script type="text/javascript">
+			var count = 0;
+
+			setTimeout(function(){
+				alert("welcome to our page"); // Will be shown after 5sec of time.
+			}, 5000);
+
+			var mymsgIntrl = setInterval(function(){
+				count++;
+				var divElement = document.createElement('div');
+				divElement.innerHTML = 'Message ' + count;
+				document.querySelector('#container').appendChild(divElement);
+			}, 3000);
+			
+			function stopMsg() {
+				
+				clearInterval(mymsgIntrl);
+			}
+
+		</script>
+	</body>
+</html>

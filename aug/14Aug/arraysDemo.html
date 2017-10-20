@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>
+			Demonstrating Arrays sorting.
+		</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var a = [50, 40, 22, 90, 11, 2, 5];
+			console.log(a);
+			for (var i = 0; i < a.length; i++){
+				for (var j = i; j < a.length; j++) {
+					if (a[i] < a[j] ){
+						var temp = a[i];
+						a[i] = a[j];
+						a[j] = temp;
+					}
+				}
+			}
+			console.log(a);
+		</script>
+	</body>
+</html>

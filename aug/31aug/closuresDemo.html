@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<title>
+			Demo of closures in js
+		</title>
+		<script type="text/javascript" src="util.js"></script>
+	</head>
+	<body>
+		<div>
+			Demo of Javascript closures
+		</div>
+		<script type="text/javascript">
+			var count = 1;
+			var s = myutils.sumValues(40, 60);
+			count++;
+			console.log(s);
+			
+			var s = myutils.multiplicationVls(90, 60);
+			console.log(s);
+			
+			console.log("My count" + count);
+			console.log("api count" + myutils.getCount());
+			
+		</script>
+	</body>	
+</html>

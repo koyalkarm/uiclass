@@ -1,0 +1,21 @@
+var contactDetails = {
+	name: 'raj',
+	fname: 'one',
+	sname: 'test',
+	mobile: {
+		personal: [23423423,234234,234234],
+		offitl: 242342342
+	},
+	address: {
+		hno: '23423A',
+		streenName: 'TEST',
+		locationDetails: {
+			state: 'AP',
+			pin: 52234234
+		}
+	},
+	email: {
+		offitl: 'abc@org.com',
+		personal: ['abc@gmail.com', 'abc@yahoo.com']
+	}
+};

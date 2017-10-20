@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>
+			Demo of Objects with behaviour			
+		</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var sdetails = {
+				name: 'Raj',
+				age: 30,
+				marks: [30, 50, 60],
+				gender: 'Male',
+				total: 0,
+				showDetails: function() {
+					this.getTotalAndAvg();
+					console.log("STUDENT DETAILS");
+					console.log("Student Name " + this.name);
+					console.log("Student Age " + sdetails.age);
+					console.log("Student Total " + this.total);
+					console.log("Student Avg " + sdetails.avg);
+				},
+				getTotalAndAvg: function() {
+					for (var i = 0; i < sdetails.marks.length; i++) {
+						this.total += sdetails.marks[i];
+					}
+					sdetails.avg = sdetails.total/sdetails.marks.length;
+				}
+			}
+
+
+			sdetails.showDetails();
+		</script>
+	</body>
+</html>

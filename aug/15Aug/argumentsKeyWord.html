@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<title>
+			Demo of js Arguments Keyword
+		</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function addValues() {
+				console.log(arguments);
+				var result = 0;
+				for (var i = 0;i < arguments.length; i++) {
+					result += arguments[i];
+				}
+				return result;
+			}
+			var sum = addValues(10, 30, 40, 11, 99, 32, 44, 44);
+			console.log("The sum is " + sum);
+		</script>
+	</body>
+</html> 

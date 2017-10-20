@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<title>
+			Student details using functions.
+		</title>
+	</head>
+	<body>
+		<div>
+			Working with Student Details using functions.
+		</div>
+		<script type="text/javascript">
+			var sname = 'raj';
+			var age = 20;
+			var total = 0;
+			var avg = 0;
+			function calAvg(marks) {	
+				for (var i = 0; i < marks.length; i++) {
+					total = total + marks[i];
+				}
+				// total = marks[0] + marks[1] + marks[2];
+				avg = total / marks.length;
+			}
+
+			function showGrade() {				
+				if (avg > 40 && avg <= 60) {
+					console.log("second class");
+				} else if (avg > 60) {
+					console.log("First class");
+				} else {
+					console.log("failed");
+				}
+			}
+
+			function showDetails() {
+				/*var marks = [];
+				marks[0] = 90;
+				marks[1] = 99;
+				marks[2] = 93; */
+
+				var marks = [90, 99, 93, 55,55, 4,22,4,4,4];
+				calAvg(marks);
+				
+				console.log("Student name " + sname);
+				console.log("student aget " + age);
+				console.log("Marks Total" + total);
+				console.log("avg " + avg);showGrade();
+			}
+
+			showDetails();
+		</script>
+	</body>
+</html>

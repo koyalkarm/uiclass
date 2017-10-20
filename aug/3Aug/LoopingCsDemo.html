@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<title>
+			Demo of For loop CS
+		</title>
+	</head>
+	<body>
+		<div>
+			Demo of for Looping 
+		</div>
+		<script type="text/javascript">
+			var a = prompt("Enter the value for which table need to be displayed");
+			a = parseInt(a);
+			
+			for (var n = 1; n <= a; n++) {
+				var count = 0;
+				for (var i = 1; i <= n; i++)	 {
+					var rem = n % i;
+					
+					if (rem == 0) {
+						count++;
+					}
+					if (count > 2) {
+						break;
+					}
+				}
+				if (count == 2) {
+					console.log(n + " is a prime no.")
+				} else {
+					console.log(n + " is not");
+				}
+			}
+
+		</script>
+	</body>
+</html>

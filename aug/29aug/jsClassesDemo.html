@@ -1,0 +1,124 @@
+<html>
+	<head>
+		<title>
+			Classes in js and creating its instance.
+		</title>
+		<style type="text/css">
+			.block {
+				border: 1px solid;
+				background: #ccc;
+				padding: 10px;
+				margin: 10px;
+			}
+			li {
+				list-style: none;
+				margin: 10px;
+			}
+			.title {
+				text-align: center;
+				font-size: 15px;
+				padding: 10px;
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="block">
+			<div class="title">
+				ABC School Student Registration Form
+			</div>
+			<ul>
+				<li>
+					Enter student Name: <input type="text" id="sname">
+				</li>
+				<li>
+					Enter student Age: <input type="text" id="sage">
+				</li>
+				<li>
+					Select Location:
+					<select id="sCountry">
+						<option value="ind">India</option>
+						<option value="chn">China</option>
+						<option value="jpa">Japan</option>
+						<option value="us">USA</option>
+					</select>
+				</li>
+				<li>
+					Enter First Subj Marks <input type="text" id="m1">
+				</li>
+				<li>
+					Enter Second Subj Marks <input type="text" id="m2">
+				</li>
+				<li>
+					Enter Third Subj Marks <input type="text" id="m3">
+				</li>
+				<li>
+					<input type="button" value="Register" onclick="registerDetails()">
+				</li>
+			</ul>
+		</div>
+		<script type="text/javascript">	
+
+			function studentDetails(obj) {
+				this.sname = obj.name;
+				this.sage = obj.sage;
+				this.location = obj.loc;
+				this.m1 = obj.m1;
+				this.m2 = obj.m2;
+				this.m3 = obj.m3;
+				this.displayDetails = function() {
+					console.log("Student Details");
+					console.log("STudent name " + this.sname);
+					console.log("STudent Age " + this.sage);
+					console.log("STudent Country " + this.location);
+					console.log("STudent Avg " + this.avg);
+					//console.log(sDetails);
+				}
+				this.calculateAvg = function() {
+					this.total = this.m1 + this.m2 + this.m3
+					this.avg = this.total/3;
+					this.displayGrade();
+				}
+				this.displayGrade = function() {
+					if(this.avg > 60) {
+						console.log("Got First class");
+					} else {
+						console.log("Got Second class");
+					}
+				}
+			}
+
+			function registerDetails() {
+				var sDetails = {};
+				sDetails.sname = document.querySelector("#sname").value;
+				sDetails.sage = document.querySelector("#sage").value;
+				sDetails.loc = document.querySelector("#sCountry").value;
+				sDetails.m1 = document.querySelector("#m1").value;
+				sDetails.m1 = parseInt(sDetails.m1);
+				sDetails.m2 = document.querySelector("#m2").value;
+				sDetails.m2 = parseInt(sDetails.m2);
+				sDetails.m3 = document.querySelector("#m3").value;
+				sDetails.m3 = parseInt(sDetails.m3);
+				
+				var s1 = new studentDetails(sDetails);
+				s1.calculateAvg();
+				s1.displayDetails();
+
+
+				clearData();
+			}
+
+			function clearData() {
+				document.querySelector("#m1").value = '';
+				document.querySelector("#m2").value = '';
+				document.querySelector("#m3").value = '';
+				document.querySelector("#sname").value = '';
+				document.querySelector("#sage").value = '';
+				document.querySelector("#sCountry").value = '';
+			}
+			
+		</script>
+	</body>
+</html>
+
+

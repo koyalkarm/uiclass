@@ -1,0 +1,78 @@
+<html>
+	<head>
+		<title>
+			Creating Dynamic Object and Implementing Inheritance between a static and dynamic object.
+		</title>
+		<style type="text/css">
+			.block {
+				border: 1px solid;
+				background: #ccc;
+				padding: 10px;
+				margin: 10px;
+			}
+			li {
+				list-style: none;
+				margin: 10px;
+			}
+			.title {
+				text-align: center;
+				font-size: 15px;
+				padding: 10px;
+				text-decoration: underline;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="block">
+			<div class="title">
+				ABC School Student Registration Form
+			</div>
+			<ul>
+				<li>
+					Enter student Name: <input type="text" id="sname">
+				</li>
+				<li>
+					Enter student Age: <input type="text" id="sage">
+				</li>
+				<li>
+					Select Location:
+					<select id="sCountry">
+						<option value="ind">India</option>
+						<option value="chn">China</option>
+						<option value="jpa">Japan</option>
+						<option value="us">USA</option>
+					</select>
+				</li>
+				<li>
+					<input type="button" value="Register" onclick="registerDetails()">
+				</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			var schoolDetails = {
+				name: 'ABC School',
+				schoolLoc: 'Hyderabad',
+				rating: '4/5'
+			};
+			
+			function registerDetails() {
+				var sDetails = Object.create(schoolDetails);
+				sDetails.sname = document.querySelector("#sname").value;
+				sDetails.sage = document.querySelector("#sage").value;
+				sDetails.location = document.querySelector("#sCountry").value;
+				sDetails.displayDetails = function() {
+					console.log("STudent name " + this.sname);
+					console.log("STudent Age " + this.sage);
+					console.log("STudent Country " + this.location);
+					console.log("School Detailis ");
+					console.log("School Name " + this.name);
+					console.log("School Location "  + this.schoolLoc);
+					console.log("School Rating " + this.rating);
+				}
+				sDetails.displayDetails();
+			}
+			
+		</script>
+	</body>
+</html>
+

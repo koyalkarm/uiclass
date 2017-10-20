@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title>
+			Demo of Js String methods.
+		</title>
+	</head>
+	<body>
+		<div>
+			List of methods can be applied on strings
+		</div>
+		<script type="text/javascript">
+			var msg = "eHllo all very goOOod mOrning";
+
+			console.log(msg.length);
+			console.log(msg.split('o'));
+			console.log(msg.charCodeAt(3));
+			console.log(msg.charAt(3));
+
+			var msg2 = "bye all";
+			var msg3 = msg.concat(msg2);
+			console.log(msg3);
+			console.log(msg.toLowerCase());
+			console.log(msg.toUpperCase());
+			console.log(msg.substr(2, 10));
+			console.log(msg.slice(2, 10));
+
+			console.log(msg.replace(" ", '-'));
+			console.log(msg.replace(/hllo/gi, '-'));
+		</script>
+	</body>
+</html>

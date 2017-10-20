@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<title>
+			Demo of working with student Details.
+		</title>
+	</head>
+	<body>
+		<div>
+			Working with Student Details.
+		</div>
+		<script type="text/javascript">
+			var sName = prompt("Enter student Name");
+			var stdAge = prompt("enter student age");
+			var gender = prompt('Enter student Gender');
+			var m1, m2, m3;
+			m1 = prompt("enter first sub marks");
+			m1 = parseInt(m1);
+			m2 = prompt("enter second sub marks");
+			m2 = parseInt(m2);
+			m3 = prompt("enter third sub marks");;
+			m3 = parseInt(m3);
+			var total = m1 + m2 + m3;
+			var avg = total/3;
+
+			console.log("Student  Name - " + sName);
+			console.log("Student  Age - " + stdAge);
+			console.log("Student  gender - " + gender);
+			console.log("Student  Total - " + total);
+			console.log("Avg marks - " + avg);
+
+			if (avg >= 60) {
+				console.log("STudent is passed");
+			}
+			if (avg < 60) {
+				console.log("STudent is Failed");	
+			}		
+			console.log("Done");
+		</script>
+	</body>
+</html>

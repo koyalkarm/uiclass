@@ -1,0 +1,75 @@
+<html>
+	<head>
+		<title>
+			Demo of reading values from input elements
+		</title>
+		<style type="text/css">
+			ul {
+				border: 1px solid;
+			}
+			li {
+				list-style: none;
+				border: 1px solid;
+				padding: 5px;
+				margin: 5px;
+			}
+			.title {
+				text-align: center;
+				color: green;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="title">
+			Student Registration Pages
+		</div>
+		<ul>
+			<li>
+				Enter student Name: <input type="text" id='sname'>
+			</li>
+			<li>
+				Student Age: <input type="text" id="sage">
+			</li>
+			<li>
+				Country:
+					<select id="scountry">
+						<option value="CHN">China</option>
+						<option value="JPN">Japan</option>
+						<option value="US">USA</option>
+					</select>
+			</li>
+			<li>
+				Qualification: 
+				MCA <input type="checkbox" id="qmca">
+				BA <input type="checkbox" id="qba">
+				Btech <input type="checkbox" id="qbt">
+			</li>
+			<li>
+				Gender: 
+						<input type="radio" value="Male" name="gender" selected="true" > M
+						<input type="radio" value="female" name="gender"> F
+			</li>
+			<li>
+				About yourself: <textarea id="abturslf"></textarea>
+			</li>
+			<li>
+				<input type="button" value="Register Details" onclick="readValues();">
+			</li>
+		</ul>
+		<script type="text/javascript">
+			function readValues() {
+				var uDetails = {};
+				uDetails.uname = document.querySelector("#sname").value;
+				uDetails.uage = document.querySelector("#sage").value;
+				var cntryElement = document.querySelector("#scountry");
+				var index = cntryElement.selectedIndex;
+				var selectedOption = cntryElement.options[index];
+				uDetails.uCountry = selectedOption.text;
+				uDetails.uaboutself = document.querySelector("#abturslf").value;
+				console.log(uDetails);
+				console.log(JSON.stringify(uDetails));
+			}
+		</script>
+	</body>
+</html>
+

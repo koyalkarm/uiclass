@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<title>
+			Inheritance between Two Static objects
+		</title>
+	</head>
+	<body>
+		<div>
+			Implementing inheritance between two static objects.
+		</div>
+		<script type="text/javascript">
+			var sellerDetails = {
+				sellerName: 'Indian Electronics',
+				sellerRating: '4/5',
+				sellerLocation: 'Mumbai',
+				displaySellerDetails: function() {
+					console.log("Seller name " +this.sellerName);
+					console.log("Seller Rating " +this.sellerRating);
+					console.log("Seller Location " +this.sellerLocation);
+				}
+			};
+
+			var product1 = {
+				name: 'Laptop',
+				price: '$300',
+				manufacturer: 'Samsung',
+				discount: '30%',
+				displayProductDetails: function() {
+					console.log("product Name " + this.name);
+					console.log("product Manufacturer " + this.manufacturer);
+					console.log("product Price " + this.price);
+					console.log("product Discount " + this.discount);
+				}
+			};
+			product1.__proto__ = sellerDetails;
+			product1.displayProductDetails();
+			product1.displaySellerDetails();
+
+			var product2 = {
+				name: 'Mobile',
+				price: '$320',
+				manufacturer: 'Apple',
+				discount: '10%',
+				displayProductDetails: function() {
+					console.log("product Name " + this.name);
+					console.log("product Manufacturer " + this.manufacturer);
+					console.log("product Price " + this.price);
+					console.log("product Discount " + this.discount);
+				}
+			};
+			product2.__proto__ = sellerDetails;
+			product2.displayProductDetails();
+			product2.displaySellerDetails();
+		</script>
+	</body>
+</html>

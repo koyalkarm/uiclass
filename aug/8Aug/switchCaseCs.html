@@ -1,0 +1,42 @@
+<html>
+	<head>
+		<title>
+			Demo of Switch Case CS
+		</title>
+	</head>
+	<body>
+		<div>
+			Demo of switch case CS
+		</div>
+		<script type="text/javascript">
+			var fVal = prompt("enter first value");
+			fVal = parseInt(fVal);
+			var sVal = prompt("enter Second value");
+			sVal = parseInt(sVal);
+
+			var userSelection = prompt("Enter ur selction add/rem/sub/mul");
+			var result = 0;
+
+			switch(userSelection) {
+				case 'add':
+					result = fVal + sVal;
+					console.log("The sum of two numbers is" + result);
+					break;
+				case 'mul':
+					result = fVal * sVal;
+					console.log("The Mul of two numbers is" + result);
+					break;
+				case 'sub':
+					result = fVal - sVal;
+					console.log("The Sub of two numbers is" + result);
+					break;
+				case 'rem':
+					result = fVal % sVal;
+					console.log("The Reminder of two numbers is" + result);
+					break;
+				default:
+					console.log("its wrong selction..");
+			}
+		</script>
+	</body>
+</html>

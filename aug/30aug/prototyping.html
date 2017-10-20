@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title>
+			Demo of prototype feature
+		</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function schoolDetails() {
+				this.sName = "ABC School";
+				this.location = "Hyderabad";
+				this.displaySchoolDetails = function(){
+					console.log("School Name " + this.sName);
+					console.log("School Location " + this.location);
+				}
+			}
+
+			function studentDetails(obj) {				
+				this.name = obj.name;
+				this.age = obj.age;
+				this.marks = obj.marks;
+				this.calAvg = function() {
+					this.total = 0;
+					for (var i = 0; i < this.marks.length; i++) {
+						this.total += this.marks[i];
+					}
+					this.avg = this.total/this.marks.length;
+				};
+				this.displayDetails = function() {
+					console.log("Name" + this.name);
+					console.log("Avg" + this.avg);
+				}
+			}
+
+			studentDetails.prototype = new schoolDetails();
+			
+			var s1 = new studentDetails({name: 'PRasad', age: 40, marks: [30,45, 70]});
+			s1.calAvg();
+			s1.displayDetails();
+			s1.displaySchoolDetails();
+			
+			console.log(s1);
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,47 @@
+var myutils = (function(){
+	var count = 0;
+
+	// Method to add two values.
+	function addValues(firstVal, secondVal) {
+		count++;
+		var result = 0;
+		result = firstVal + secondVal;
+		return result;
+	}
+
+	// Method to sub two values.irstVal, secondVal) {
+		count++;
+	function subValues(){
+		var result = 0;
+		result = firstVal - secondVal;
+		return result;
+	}
+
+	// Method to mul two values.
+	function mulValues(firstVal, secondVal) {
+		count++;
+		var result = 0;
+		result = firstVal * secondVal;
+		return result;
+	}
+
+	// Method to return the total No. of times all methods been called.
+	function getTotalCount() {
+		console.log("Total No. of times methods been used are " + count);
+	}
+
+	var a  =50;
+
+	return {
+		sumValues: function(a, b) {
+			return addValues(a,b);
+		},
+		getCount: function(){
+			return count;
+		},
+		multiplicationVls: function(a,b) {
+			return mulValues(a,b);
+		}
+	}
+})();
+
